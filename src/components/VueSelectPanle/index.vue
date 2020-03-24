@@ -9,17 +9,17 @@
         <img src="@/assets/icon/question.png">
       </div>
       <div class="vue-select-panle-header__selectcount">
-        5/5
+        1/5
       </div>
     </div>
 
     <div class="vue-select-panle-body">
       <div
-        class="vue-select-item active"
-        v-for="item in 5"
-        :key="item"
+        :class="['vue-select-item', {'vue-select-item__active': index === 2 }]"
+        v-for="(item, index) in dataList"
+        :key="item.key"
       >
-        图说
+        {{ item.text }}
       </div>
     </div>
 
@@ -30,10 +30,15 @@
 export default {
   name: 'VueSelectPanle',
 
-  data() {},
+  data() {
+    return {}
+  },
 
   props: {
-    dataList: {}
+    dataList: {
+      type: Array,
+      default: () => []
+    }
   }
 }
 </script>
@@ -46,7 +51,7 @@ export default {
 .vue-select-panle {
   position: relative;
   width: 278px;
-  padding: 20px 16px 12px 16px;
+  padding: 20px 0 12px 0;
 
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(230, 232, 235, 0.98);
@@ -57,6 +62,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    padding: 0 16px 0 16px;
 
     &__title,
     &__question {
@@ -96,20 +102,28 @@ export default {
   &-body {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 0 0 0 16px;
 
     .vue-select-item {
       height: 28px;
-      padding: 4px 12px;
+      padding: 4px 11px;
       border-radius: 2px;
       color: rgba(121, 124, 128, 1);
       border: solid 1px rgba(218, 223, 229, 1);
+      margin-right: 12px;
       margin-bottom: 8px;
       cursor: pointer;
 
       font-size: 14px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
+
+      &.vue-select-item__active {
+        background: rgba(240, 247, 255, 1);
+        border-radius: 2px;
+        border: 1px solid rgba(26, 133, 255, 1);
+        color: rgba(26, 133, 255, 1);
+      }
     }
   }
 }
