@@ -2,6 +2,8 @@
 
 ## 这是一个 vue 的多选面板组件
 
+![Snipaste_2020-03-26_01-55-42.png](http://ww1.sinaimg.cn/large/006iQgpIgy1gd6pqpnjtoj30hi0dgt95.jpg)
+
 ## 安装
 
 ```shell
