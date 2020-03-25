@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-select-panle :data-list="dataList"></vue-select-panle>
+    <vue-select-panle :data-list="dataList" v-model="checkedList"></vue-select-panle>
   </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
         { key: 'cdcdd', text: '后端' },
         { key: 'dsada', text: '算法' },
         { key: 'dsads', text: '算法' }
-      ]
+      ],
+      checkedList: []
     }
   },
 
