@@ -22,7 +22,7 @@ export default {
         { key: 'dqd', text: '算法' },
         { key: 'dsa', text: '哲学' },
         { key: 'fasfa', text: '操作系统' },
-        { key: 'casc', text: '前端' },
+        { key: 'casc', text: '前端', disable: true },
         { key: 'cdcdd', text: '后端' },
         { key: 'dsada', text: '算法' },
         { key: 'dsads', text: '算法' }

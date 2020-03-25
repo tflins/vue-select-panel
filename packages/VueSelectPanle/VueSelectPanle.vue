@@ -15,7 +15,7 @@
 
     <div class="vue-select-panle-body">
       <div
-        :class="['vue-select-item', {'vue-select-item__active': item.active }]"
+        :class="['vue-select-item', {'vue-select-item__active': item.active }, { 'vue-select-item__disable': item.disable }]"
         v-for="(item, index) in dataList"
         :key="item.key"
         @click="onClickItem(item, index)"
@@ -100,7 +100,8 @@ export default {
     // 验证选项是否能激活
     checkCanActice(item) {
       if (item.disable) return false
-      if (this.curCheckedLength >= this.maxCheckedLength && !item.active) return false
+      if (this.curCheckedLength >= this.maxCheckedLength && !item.active)
+        return false
       return true
     }
   }
@@ -182,13 +183,13 @@ export default {
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
 
-      &:hover {
-        border:1px solid rgba(153,201,255,1);
+      &:not(.vue-select-item__disable):hover {
+        border: 1px solid rgba(153, 201, 255, 1);
         color: rgba(25, 133, 255, 1);
       }
 
-      &:active {
-        border:1px solid rgba(77,128,187,1);
+      &:not(.vue-select-item__disable):active {
+        border: 1px solid rgba(77, 128, 187, 1);
         color: rgba(77, 128, 187, 1);
       }
 
@@ -197,6 +198,11 @@ export default {
         border-radius: 2px;
         border: 1px solid rgba(26, 133, 255, 1);
         color: rgba(26, 133, 255, 1);
+      }
+
+      &.vue-select-item__disable {
+        cursor: no-drop;
+        opacity: 0.5;
       }
     }
   }
