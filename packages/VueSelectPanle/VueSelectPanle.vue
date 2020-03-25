@@ -2,11 +2,20 @@
   <div class="vue-select-panle">
 
     <div class="vue-select-panle-header">
-      <div class="vue-select-panle-header__title">
-        {{ title }}
-      </div>
-      <div class="vue-select-panle-header__question">
-        <img src="./assets/icon/question.png">
+      <div class="vue-select-panle-header__title">{{ title }}</div>
+      <div
+        class="vue-select-panle-header__question"
+        v-if="questionText"
+      >
+        <popper :options="{placement: 'top', modifiers: { offset: { offset: '0, 4px' } }}">
+          <div class="popper">
+            {{ questionText }}
+          </div>
+          <img
+            slot="reference"
+            src="./assets/icon/question.png"
+          >
+        </popper>
       </div>
       <div class="vue-select-panle-header__selectcount">
         {{ curCheckedLength }}/{{ maxCheckedLength }}
@@ -28,6 +37,9 @@
 </template>
 
 <script>
+import Popper from 'vue-popperjs'
+import 'vue-popperjs/dist/vue-popper.css'
+
 export default {
   name: 'VueSelectPanle',
 
@@ -50,7 +62,8 @@ export default {
     maxCheckedLength: {
       type: Number,
       default: 5
-    }
+    },
+    questionText: String
   },
 
   computed: {
@@ -66,6 +79,10 @@ export default {
     value(val) {
       this.curValue = val
     }
+  },
+
+  components: {
+    Popper
   },
 
   methods: {
@@ -150,6 +167,22 @@ export default {
       img {
         width: 100%;
         height: 100%;
+      }
+
+      /deep/ {
+        .popper {
+          width: 226px;
+          padding: 25px 12px 16px 12px;
+
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          text-align: left;
+          font-weight: 400;
+          color: rgba(121, 124, 128, 1);
+          line-height: 20px;
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0px 4px 12px 0px rgba(0, 27, 58, 0.08);
+        }
       }
     }
 

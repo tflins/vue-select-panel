@@ -3,7 +3,11 @@
   "version": "0.9.1",
   "description": "一个 vue 的多选面板组件",
   "main": "lib/vue-select-panle.umd.min.js",
-  "keywords": ["vue-select-panle", "select-panle", "vue"],
+  "keywords": [
+    "vue-select-panle",
+    "select-panle",
+    "vue"
+  ],
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -14,7 +18,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-popperjs": "^2.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",

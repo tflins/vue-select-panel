@@ -4,6 +4,7 @@
       v-model="checkedList"
       :data-list="dataList"
       title="文章分类"
+      questionText="投稿的文章会按照选择的分类，在文章分类列表中展示。"
     ></vue-select-panle>
   </div>
 </template>
