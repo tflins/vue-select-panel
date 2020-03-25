@@ -17,7 +17,7 @@
           >
         </popper>
       </div>
-      <div class="vue-select-panle-header__selectcount">
+      <div class="vue-select-panle-header__selectcount" v-if="showScale">
         {{ curCheckedLength }}/{{ maxCheckedLength }}
       </div>
     </div>
@@ -63,7 +63,11 @@ export default {
       type: Number,
       default: 5
     },
-    questionText: String
+    questionText: String,
+    showScale: {
+      type: Boolean,
+      default: true
+    }
   },
 
   computed: {
@@ -78,6 +82,9 @@ export default {
     },
     value(val) {
       this.curValue = val
+    },
+    curCheckedLength(len) {
+      if (len === this.value.length) this.$emit('checked-full', this.curValue)
     }
   },
 
