@@ -3,7 +3,7 @@
 
     <div class="vue-select-panle-header">
       <div class="vue-select-panle-header__title">
-        文章分类
+        {{ title }}
       </div>
       <div class="vue-select-panle-header__question">
         <img src="@/assets/icon/question.png">
@@ -39,6 +39,10 @@ export default {
 
   props: {
     value: Array,
+    title: {
+      type: String,
+      default: '标题'
+    },
     dataList: {
       type: Array,
       default: () => []

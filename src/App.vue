@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <vue-select-panle :data-list="dataList" v-model="checkedList"></vue-select-panle>
+    <vue-select-panle
+      v-model="checkedList"
+      :data-list="dataList"
+      title="文章分类"
+    ></vue-select-panle>
   </div>
 </template>
 
 <script>
-import VueSelectPanle from '@/components/VueSelectPanle'
-
 export default {
   data() {
     return {
@@ -27,10 +29,6 @@ export default {
       ],
       checkedList: []
     }
-  },
-
-  components: {
-    VueSelectPanle
   }
 }
 </script>
