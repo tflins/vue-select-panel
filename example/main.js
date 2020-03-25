@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueSelectPanle from '@/components/VueSelectPanle'
+import VueSelectPanle from '../packages/main.js'
 
 Vue.config.productionTip = false
 

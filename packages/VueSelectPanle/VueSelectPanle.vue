@@ -6,7 +6,7 @@
         {{ title }}
       </div>
       <div class="vue-select-panle-header__question">
-        <img src="@/assets/icon/question.png">
+        <img src="./assets/icon/question.png">
       </div>
       <div class="vue-select-panle-header__selectcount">
         {{ curCheckedLength }}/{{ maxCheckedLength }}
