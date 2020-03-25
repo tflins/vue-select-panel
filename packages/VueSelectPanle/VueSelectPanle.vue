@@ -182,6 +182,16 @@ export default {
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
 
+      &:hover {
+        border:1px solid rgba(153,201,255,1);
+        color: rgba(25, 133, 255, 1);
+      }
+
+      &:active {
+        border:1px solid rgba(77,128,187,1);
+        color: rgba(77, 128, 187, 1);
+      }
+
       &.vue-select-item__active {
         background: rgba(240, 247, 255, 1);
         border-radius: 2px;
