@@ -2,7 +2,7 @@
 
 ## 这是一个 vue 的多选面板组件
 
-![Snipaste_2020-03-26_01-55-42.png](http://ww1.sinaimg.cn/large/006iQgpIgy1gd6pqpnjtoj30hi0dgt95.jpg)
+![截屏2020-03-2602.09.11.png](http://ww1.sinaimg.cn/large/006iQgpIgy1gd6pzu9bs1j30gu0dg0u0.jpg)
 
 ## 安装
 
@@ -97,12 +97,10 @@ new Vue({
 ### dataList props
 
 | 属性名称 | 说明 | 类型 | 必须包含 |
-| ------ | ------ | --- | ---- | --- |
+| ------ | ------ | --- | ---- |
 | key | 该项的唯一标识，不可重复 | | 是 |
 | text | 该项的文本描述, 展示文本 | | 是 |
 | disable | 该项是否不可选 | Boolean |
-
-
 
 ## Events
 
