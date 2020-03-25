@@ -7,6 +7,7 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  publicPath: './',
   chainWebpack: config => {
     config.resolve.alias
       .set('@', path.resolve('example'))
