@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="vue-select-panle-body">
+    <div class="vue-select-panle-body" :style="{maxHeight: `${maxHeight}px`}">
       <div
         :class="['vue-select-item', {'vue-select-item__active': item.active }, { 'vue-select-item__disable': item.disable }]"
         v-for="(item, index) in dataList"
@@ -67,7 +67,8 @@ export default {
     showScale: {
       type: Boolean,
       default: true
-    }
+    },
+    maxHeight: Number
   },
 
   computed: {
@@ -208,6 +209,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding: 0 0 0 16px;
+    overflow: auto;
 
     .vue-select-item {
       height: 28px;
