@@ -93,6 +93,7 @@ new Vue({
 | maxCheckedLength | 最大可以选中的数量 | Number | | 5 |
 | questionText | 疑问弹出层的文本，当该项为空时，自动隐藏疑问图标 | String |
 | showScale | 是否显示已选中的值和最大可选中的值的比例 | Boolean | true, false | true |
+| maxHeight | 最大高度，超过该高度出现滚动条，不传则不限制高度 | Number |  |  |
 
 ### dataList props
 
