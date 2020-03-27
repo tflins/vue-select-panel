@@ -28,7 +28,10 @@ export default {
         { key: 'Hfvwg', text: '数控' },
         { key: 'SJn0J', text: '电信' }
       ],
-      checkedList: []
+      checkedList: [
+        { key: 'zzIoW', text: '算法' },
+        { key: 'T25A2', text: '操作系统' }
+      ]
     }
   }
 }

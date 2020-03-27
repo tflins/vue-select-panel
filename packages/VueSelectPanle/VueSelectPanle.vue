@@ -17,12 +17,19 @@
           >
         </popper>
       </div>
-      <div class="vue-select-panle-header__selectcount" v-if="showScale">
+      <div
+        class="vue-select-panle-header__selectcount"
+        v-if="showScale"
+      >
         {{ curCheckedLength }}/{{ maxCheckedLength }}
       </div>
     </div>
 
-    <div class="vue-select-panle-body" :style="{maxHeight: `${maxHeight}px`}" v-if="f5">
+    <div
+      class="vue-select-panle-body"
+      :style="{maxHeight: `${maxHeight}px`}"
+      v-if="refresh"
+    >
       <div
         :class="['vue-select-item', {'vue-select-item__active': isChecked(item) }, { 'vue-select-item__disable': item.disable }]"
         v-for="(item, index) in dataList"
@@ -46,7 +53,7 @@ export default {
   data() {
     return {
       curValue: this.value,
-      f5: true
+      refresh: true
     }
   },
 
@@ -85,8 +92,8 @@ export default {
     value(val) {
       this.curValue = val
       // TODO: 暂时先这样写，不能每次重渲染
-      this.f5 = false
-      this.f5 = true
+      this.refresh = false
+      this.refresh = true
     },
     curCheckedLength(len) {
       if (len === this.value.length) this.$emit('checked-full', this.curValue)
@@ -127,14 +134,17 @@ export default {
     // 验证选项是否能激活
     checkCanActice(item) {
       if (item.disable) return false
-      if (this.curCheckedLength >= this.maxCheckedLength && !this.isChecked(item))
+      if (
+        this.curCheckedLength >= this.maxCheckedLength &&
+        !this.isChecked(item)
+      )
         return false
       return true
     },
 
     // 判断是否为选中项
     isChecked(item) {
-      return this.value.includes(item)
+      return this.value.findIndex(v => v.key === item.key) > -1
     }
   }
 }
