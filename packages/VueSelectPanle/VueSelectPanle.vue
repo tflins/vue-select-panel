@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="vue-select-panle-body" :style="{maxHeight: `${maxHeight}px`}">
+    <div class="vue-select-panle-body" :style="{maxHeight: `${maxHeight}px`}" v-if="f5">
       <div
         :class="['vue-select-item', {'vue-select-item__active': isChecked(item) }, { 'vue-select-item__disable': item.disable }]"
         v-for="(item, index) in dataList"
@@ -45,7 +45,8 @@ export default {
 
   data() {
     return {
-      curValue: this.value
+      curValue: this.value,
+      f5: true
     }
   },
 
@@ -83,6 +84,9 @@ export default {
     },
     value(val) {
       this.curValue = val
+      // TODO: 暂时先这样写，不能每次重渲染
+      this.f5 = false
+      this.f5 = true
     },
     curCheckedLength(len) {
       if (len === this.value.length) this.$emit('checked-full', this.curValue)
@@ -97,7 +101,7 @@ export default {
     // 点击一项
     onClickItem(item, index) {
       if (!this.checkCanActice(item)) return
-      if (!item.active) {
+      if (!this.isChecked(item)) {
         this.pitchOn(item)
       } else {
         this.cancelSelected(item)
@@ -107,7 +111,6 @@ export default {
 
     // 选中
     pitchOn(item) {
-      // this.$set(item, 'active', true)
       this.curValue.push(item)
       this.curValue = [...new Set(this.curValue)]
     },
@@ -115,7 +118,6 @@ export default {
     // 取消选中
     cancelSelected(item) {
       let { curValue } = this
-      // this.$set(item, 'active', false)
       curValue.splice(
         curValue.findIndex(v => v.key === item.key),
         1
@@ -125,7 +127,7 @@ export default {
     // 验证选项是否能激活
     checkCanActice(item) {
       if (item.disable) return false
-      if (this.curCheckedLength >= this.maxCheckedLength && !item.active)
+      if (this.curCheckedLength >= this.maxCheckedLength && !this.isChecked(item))
         return false
       return true
     },
