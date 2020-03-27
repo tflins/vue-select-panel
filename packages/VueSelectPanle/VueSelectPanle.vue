@@ -24,7 +24,7 @@
 
     <div class="vue-select-panle-body" :style="{maxHeight: `${maxHeight}px`}">
       <div
-        :class="['vue-select-item', {'vue-select-item__active': item.active }, { 'vue-select-item__disable': item.disable }]"
+        :class="['vue-select-item', {'vue-select-item__active': isChecked(item) }, { 'vue-select-item__disable': item.disable }]"
         v-for="(item, index) in dataList"
         :key="item.key"
         @click="onClickItem(item, index)"
@@ -107,7 +107,7 @@ export default {
 
     // 选中
     pitchOn(item) {
-      this.$set(item, 'active', true)
+      // this.$set(item, 'active', true)
       this.curValue.push(item)
       this.curValue = [...new Set(this.curValue)]
     },
@@ -115,7 +115,7 @@ export default {
     // 取消选中
     cancelSelected(item) {
       let { curValue } = this
-      this.$set(item, 'active', false)
+      // this.$set(item, 'active', false)
       curValue.splice(
         curValue.findIndex(v => v.key === item.key),
         1
@@ -128,6 +128,11 @@ export default {
       if (this.curCheckedLength >= this.maxCheckedLength && !item.active)
         return false
       return true
+    },
+
+    // 判断是否为选中项
+    isChecked(item) {
+      return this.value.includes(item)
     }
   }
 }
