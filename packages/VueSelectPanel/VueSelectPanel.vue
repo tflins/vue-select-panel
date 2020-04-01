@@ -1,10 +1,10 @@
 <template>
-  <div class="vue-select-panle">
+  <div class="vue-select-panel">
 
-    <div class="vue-select-panle-header">
-      <div class="vue-select-panle-header__title">{{ title }}</div>
+    <div class="vue-select-panel-header">
+      <div class="vue-select-panel-header__title">{{ title }}</div>
       <div
-        class="vue-select-panle-header__question"
+        class="vue-select-panel-header__question"
         v-if="questionText"
       >
         <popper
@@ -22,7 +22,7 @@
         </popper>
       </div>
       <div
-        class="vue-select-panle-header__selectcount"
+        class="vue-select-panel-header__selectcount"
         v-if="showScale"
       >
         {{ curCheckedLength }}/{{ maxCheckedLength }}
@@ -30,7 +30,7 @@
     </div>
 
     <div
-      class="vue-select-panle-body"
+      class="vue-select-panel-body"
       :style="{maxHeight: `${maxHeight}px`}"
       v-if="refresh"
     >
@@ -52,7 +52,7 @@ import Popper from 'vue-popperjs'
 import 'vue-popperjs/dist/vue-popper.css'
 
 export default {
-  name: 'VueSelectPanle',
+  name: 'VueSelectPanel',
 
   data() {
     return {
@@ -164,7 +164,7 @@ export default {
   box-sizing: border-box;
 }
 
-.vue-select-panle {
+.vue-select-panel {
   position: relative;
   width: 278px;
   padding: 20px 0 12px 0;

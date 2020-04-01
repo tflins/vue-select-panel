@@ -1,3 +1,3 @@
-import VueSelectPanle from './VueSelectPanle'
+import VueSelectPanel from './VueSelectPanel'
 
-export default VueSelectPanle
+export default VueSelectPanel

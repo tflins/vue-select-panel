@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <vue-select-panle
+    <vue-select-panel
       v-model="checkedList"
       :data-list="dataList"
       title="文章分类"
       question-text="投稿的文章会按照选择的分类，在文章分类列表中展示。"
-    ></vue-select-panle>
+    ></vue-select-panel>
   </div>
 </template>
 

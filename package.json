@@ -1,11 +1,11 @@
 {
-  "name": "vue-select-panle",
+  "name": "vue-select-panel",
   "version": "1.0.5",
   "description": "一个 vue 的多选面板组件",
-  "main": "lib/vue-select-panle.umd.min.js",
+  "main": "lib/vue-select-panel.umd.min.js",
   "keywords": [
-    "vue-select-panle",
-    "select-panle",
+    "vue-select-panel",
+    "select-panel",
     "vue"
   ],
   "private": false,
@@ -14,7 +14,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-select-panle --dest lib packages/main.js"
+    "lib": "vue-cli-service build --target lib --name vue-select-panel --dest lib packages/main.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",

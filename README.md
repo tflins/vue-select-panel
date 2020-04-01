@@ -1,4 +1,4 @@
-# vue-select-panle
+# vue-select-panel
 
 ## 这是一个 vue 的多选面板组件
 
@@ -7,7 +7,7 @@
 ## 安装
 
 ```shell
-npm i vue-select-panle -S
+npm i vue-select-panel -S
 ```
 
 ## 使用
@@ -19,10 +19,10 @@ npm i vue-select-panle -S
 可以在入口文件 main.js 中全局引入依赖，也可以当做单文件组件使用
 
 ```javascript
-import VueSelectPanle from 'vue-select-panle'
-import 'vue-select-panle/lib/vue-select-panle.css'
+import VueSelectPanel from 'vue-select-panel'
+import 'vue-select-panel/lib/vue-select-panel.css'
 
-Vue.use(VueSelectPanle)
+Vue.use(VueSelectPanel)
 ```
 
 #### 在组件中使用
@@ -30,12 +30,12 @@ Vue.use(VueSelectPanle)
 ```javascript
 <template>
   <div id="app">
-    <vue-select-panle
+    <vue-select-panel
       v-model="checkedList"
       :data-list="dataList"
       title="文章分类"
       questionText="投稿的文章会按照选择的分类，在文章分类列表中展示。"
-    ></vue-select-panle>
+    ></vue-select-panel>
   </div>
 </template>
 
@@ -62,23 +62,23 @@ export default {
 ### Browser (ES5)
 
 ```javascript
-<link rel="stylesheet" href="vue-select-panle/lib/vue-select-panle.css">
-<script type="text/javascript" src="vue-select-panle.umd.min.js"></script>
+<link rel="stylesheet" href="vue-select-panel/lib/vue-select-panel.css">
+<script type="text/javascript" src="vue-select-panel.umd.min.js"></script>
 
 <div id="app">
-  <vue-select-panle
+  <vue-select-panel
     v-model="checkedList"
     :data-list="dataList"
     title="文章分类"
     questionText="投稿的文章会按照选择的分类，在文章分类列表中展示。"
-  ></vue-select-panle>
+  ></vue-select-panel>
 </div>
 
 <script type="text/javascript">
 new Vue({
   el: '#app',
   components: {
-    VueSelectPanle
+    VueSelectPanel
   }
 })
 ```
