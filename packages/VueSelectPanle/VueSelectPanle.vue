@@ -7,13 +7,17 @@
         class="vue-select-panle-header__question"
         v-if="questionText"
       >
-        <popper :options="{placement: 'top', modifiers: { offset: { offset: '0, 4px' } }}">
+        <popper
+          :options="{placement: 'top', modifiers: { offset: { offset: '0, 4px' } }}"
+          @show="icon.curIcon = icon.questionAcrive"
+          @hide="icon.curIcon = icon.question"
+        >
           <div class="popper">
             {{ questionText }}
           </div>
           <img
             slot="reference"
-            src="./assets/icon/question.png"
+            :src="icon.curIcon"
           >
         </popper>
       </div>
@@ -53,7 +57,12 @@ export default {
   data() {
     return {
       curValue: this.value,
-      refresh: true
+      refresh: true,
+      icon: {
+        curIcon: require('./assets/icon/question.png'),
+        question: require('./assets/icon/question.png'),
+        questionAcrive: require('./assets/icon/question_active.png')
+      }
     }
   },
 
